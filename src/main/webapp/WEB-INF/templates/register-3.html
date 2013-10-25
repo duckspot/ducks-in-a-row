@@ -1,0 +1,15 @@
+<header>
+    Google Calendar
+</header>
+Do you wish to connect your Google Calendar to <b>ducks in a row</b>?
+<form action="${settings.URLs.authorizeGoogleCalendar}" method="post">
+    <table>
+        <tr><td valign="right"><input type="radio" name="gcal" value="true" /></td>
+            <td>yes</td></tr>
+        <tr><td valign="right"><input type="radio" name="gcal" value="false" /></td>
+            <td>no</td></tr>
+        <tr><td></td>
+            <td><input type="submit" name="action" value="next">
+                </td></tr>
+    </table>
+</form>

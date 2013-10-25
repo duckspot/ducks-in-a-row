@@ -1,0 +1,20 @@
+<header>             
+    Test
+</header>
+${datetime}
+<form action="/test" method="POST">
+    <span class="error">${error.top}</span>
+    <table>
+        <tr><td align="right">date:</td>
+            <td><input type="text" name="date" 
+                       value="${form.date}" />
+            <span class="error">${error.date}</span></td></tr>
+        <tr><td align="right">time:</td>
+            <td><input type="text" name="time" 
+                       value="${form.time}" />
+            <span class="error">${error.time}</span></td></tr>
+        <tr><td></td>
+            <td><input type="submit" name="action" value="submit">
+            </td></tr>
+    </table>
+</form>

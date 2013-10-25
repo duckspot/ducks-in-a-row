@@ -1,0 +1,14 @@
+${if userEmail}
+    <header>
+        access denied
+    </header>            
+    <p>You have been denied access to the requested resource.</p>                
+${else}
+    <header>
+        not logged in
+    </header>            
+    <p>You are not logged in.  Most likely your session expired due to 
+        inactivity.</p>
+    <p><a href="${securityLoginURL}" class="button">login and return 
+            to page</a></p>
+${end}

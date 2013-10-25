@@ -1,0 +1,82 @@
+${if false} <!--
+/diar/WEB-INF/templates/events.html
+
+History:
+ 4/ 4/13 PD - add clickable external link symbol on events with link field set
+ 4/ 4/13 PD - change event selection links to use Id rather than urlTime
+
+TODO: 1 URL of form on line 14 needs better date/time selection features
+-->${end}
+<header>                
+    ${displayDate}
+</header>
+${time;simpleDate(shortTime)}
+<form action="${settings.URLs.day}/${day.selectedTime;simpleDate(urlTime)}" method="POST">
+    <input type="text" name="description" />
+    <input type="submit" name="action" value="new event" />
+</form>
+${if selectedEvent}
+    <form action="${settings.URLs.day}/${day.selectedTime;simpleDate(urlTime)}" method="POST">
+        <input type="hidden" name="eventId" value="${selectedEventId}" />
+        <input type="submit" name="action" value="details" />
+        <input type="submit" name="action" value="edit" />
+        ${if selectedEvent.can.start}
+            <input type="submit" name="action" value="start now" />
+            <input type="submit" name="action" value="start after last" />
+        ${end}
+        ${if selectedEvent.can.reStart}
+            <input type="submit" name="action" value="restart now" />
+            <input type="submit" name="action" value="restart after last" />
+        ${end}
+        ${if selectedEvent.can.stop}
+            <input type="submit" name="action" value="stop" />
+        ${end}
+        ${if selectedEvent.can.cancel}
+            <input type="submit" name="action" value="cancel" />
+        ${end}        
+        <input type="submit" name="action" value="delete" />
+    </form>
+${end}
+<table>
+    ${foreach eventsBefore event}
+    <tr valign="top" class="event">
+            <td align="center"><img src="${event.icon}"></td>
+            <td align="center">${if event.link}
+                <a href="${event.link}" target="_blank"><img 
+                        src="/images/external_link.png"></a>${end}</td>
+            <td align="right"><a class="${event.startTimeClass}" 
+                   href="${settings.URLs.day}/${event.id}"
+                   >${event.startTime;simpleDate(shortTime)}</a></td>
+            <td><a class="event" 
+                   href="${settings.URLs.day}/${event.id}"
+                   >${event.description}
+                   [${event.lengthMinutes;hoursMinutes}]</a></td></tr>
+    ${end}
+    ${if selectedEvent}
+        <tr valign="top" class="selected"><td align="center"><img 
+                    src="${selectedEvent.icon}"></td>
+            <td align="center">${if selectedEvent.link}
+                <a href="${selectedEvent.link}" target="_blank"><img 
+                        src="/images/external_link.png"></a>${end}</td>
+            <td align="right"><a class="${selectedEvent.startTimeClass}" 
+                                 href="${settings.URLs.day}/${selectedEvent.Id}"
+                                 >${selectedEvent.startTime;simpleDate(shortTime)}</a></td>
+            <td><a class="event" 
+                   href="${settings.URLs.day}/${selectedEvent.Id}"
+                   >${selectedEvent.description}
+                    [${selectedEvent.lengthMinutes;hoursMinutes}]</a></td></tr>
+    ${end}
+    ${foreach eventsAfter event}
+        <tr valign="top"><td align="center"><img src="${event.icon}"></td>
+            <td align="center">${if event.link}
+                <a href="${event.link}" target="_blank"><img 
+                        src="/images/external_link.png"></a>${end}</td>
+            <td align="right"><a class="${event.startTimeClass}" 
+                   href="${settings.URLs.day}/${event.Id}"
+                   >${event.startTime;simpleDate(shortTime)}</a></td>
+            <td class="event2"><a class="event" 
+                   href="${settings.URLs.day}/${event.Id}"
+                   >${event.description}
+                   [${event.lengthMinutes;hoursMinutes}]</a></td></tr>
+    ${end}
+</table>

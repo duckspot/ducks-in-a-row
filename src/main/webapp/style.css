@@ -1,0 +1,153 @@
+body
+{
+    background-color:#cbdbf4;
+    font-family: sans-serif;
+}
+
+h1 {
+    font-size: large;
+    margin: 4px 0 0 0;
+}
+
+#centerContainer {
+    width: 840px;   /* Width of main container  */
+    margin: 0 auto; /* Center container on page */
+}
+
+/* #top contains #clock, #logo, #version, #login */
+#top {     
+}
+
+#clock {    
+    float: left;
+    width: 178px;
+    border: 1px hidden;
+    padding: 4px 8px;
+}
+#logo {    
+    float: left;
+    height: 109px;
+    width: 304px;    
+    
+}
+#version {
+    float: left;
+    margin-top: 88px;
+    width: 70px;
+    font-size: small;    
+}
+#login {    
+    float: left;
+    text-align: right;
+    width: 240px;    
+    padding: 4px 8px;
+}
+
+.hidden {
+    display: none;
+}
+.break {
+    clear: both;
+}
+
+/* #middle contains #calendarColumn #mainColumn */
+#middle {
+    clear: both;
+    min-height: 100px;
+}
+
+#calendarColumn {
+    float: left;
+    width: 176px;    
+    padding: 4px 8px;
+    text-align: center;
+}
+
+#calendar {
+    padding: 0 0 3px 3px;
+}
+.monthYear {
+    text-align: center;
+}
+.previousMonth {
+    text-align: center;
+    cursor:pointer;
+}
+.nextMonth {
+    text-align: center;
+    cursor:pointer;
+}
+.dayName {
+    font-size: xx-small;
+    text-align: center;    
+}
+.day {    
+    font-size: smaller;
+    text-align: center;
+    background-color: #feccb9;
+    cursor:pointer;
+    border-width: 2px;    
+    width: 22px;
+    height: 22px;
+}
+.selected {
+    border-style: solid;
+    border-color: black;
+    width: 18px;
+    height: 18px;
+}
+.today {
+    background-color: #fef966;    
+}
+
+#mainColumn {
+    float: left;
+    width: 600px;    
+    padding: 4px 8px;
+}
+
+#mainTitle {
+    font-size: medium;    
+}
+
+.roundBox {
+    margin: 0 10px 0 0; /* Margins for inner DIV inside each column (to provide padding)*/
+    border: 1px solid #000;
+    background-color: white;
+    border-radius: 15px;                
+    -moz-border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -o-border-radius: 15px;
+    -ms-border-radius: 15px;
+}
+
+a.button {
+    background-color:#fd3200;
+    box-shadow:1px 1px 4px #000;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-right: 5px;
+    padding-top: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 5px;
+    width:80px;
+    height:30px;
+    -moz-border-radius-topleft:4px;
+    border-top-left-radius:4px;
+    -moz-border-radius-topright:4px;
+    border-top-right-radius:4px;
+    -moz-border-radius-bottomleft:4px;
+    border-bottom-left-radius:4px;
+    -moz-border-radius-bottomright:4px;
+    border-bottom-right-radius:4px;    
+    color:#fff;
+    text-shadow:#000 1px 1px 0px;
+    text-decoration:none;
+    text-align:center;
+    font-weight:bold;
+}
+
+#content {
+    padding: 0 0 15px 3px;
+}

@@ -1,0 +1,9 @@
+${if settings.userRegistered}
+    <a href="${settings.URLs.settings}">${settings.name}</a> | <a href="${settings.URLs.logout}">logout</a>
+${else}
+    ${if settings.userLoggedIn}
+        <a href="${settings.URLs.register}">register</a>
+    ${else}
+        <a href="${settings.URLs.login}">login</a>
+    ${end}
+${end}

@@ -1,0 +1,59 @@
+${if false} <!--
+/diar/WEB-INF/templates/eventEdit.html
+
+History:
+ 4/ 4/13 PD add link property to event
+-->${end}
+<header>                
+    Event
+</header>
+<form action="${settings.URLs.event}" method="POST">
+    <input type="hidden" name="id" value="${form.id}" />                
+    <span class="error">${error.top}</span>
+    <table>
+        <tr valign="top"><td align="right">id:</td>
+            <td>${form.id}</td></tr>
+        <tr valign="top"><td align="right">date:</td>
+            <td><input type="text" name="date" 
+                       value="${form.date}" />
+            <span class="error">${error.date}</span></td></tr>
+        <tr valign="top"><td align="right">description:</td>
+            <td><textarea name="description" rows="3" cols="60" wrap="auto">${form.description}</textarea><br/>                            
+            <span class="error">${error.description}</span></td></tr>
+        <tr valign="top"><td align="right">length:</td>
+            <td><input type="text" name="length" 
+                       value="${form.length}" />
+            <span class="error">${error.length}</span>
+            </td></tr>
+        <tr valign="top"><td align="right">start:</td>
+            <td><input type="text" name="startTime"
+                       value="${form.startTime}"/>
+                <span class="error">${error.startTime}</span>
+            </td>
+        <tr valign="top"><td align="right">sequence:</td>
+            <td><input type="text" name="sequence" 
+                       value="${form.sequence}" />
+                <span class="error">${error.sequence}</span></td>
+        <tr valign="top"><td align="right">completed:</td>
+            <td><input type="checkbox" name="completed" value="checked"
+                       ${form.completed} />
+                <span class="error">${error.completed}</span></td>
+        <tr valign="top"><td align="right">active:</td>
+            <td><input type="checkbox" name="active" value="checked"
+                       ${form.active} />
+                <span class="error">${error.started}</span>
+            </td></tr>
+        <tr valign="top"><td align="right">start fixed:</td>
+            <td><input type="checkbox" name="startFixed" value="checked"
+                       ${form.startFixed} />
+                <span class="error">${error.startFixed}</span>
+            </td></tr>
+        <tr><td align="right">link:</td>
+            <td><input type="text" name="link" value="${form.link}" />
+                <span class="error">${error.link}</span></td></tr>
+        <tr><td></td>
+            <td><input type="submit" name="action" value="save">
+                <input type="submit" name="action" value="cancel">
+            </td></tr>
+    </table>
+</form>

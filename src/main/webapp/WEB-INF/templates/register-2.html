@@ -1,0 +1,17 @@
+<header>
+    complete registration
+</header>
+Enter your name to complete registration.
+<form action="${settings.URLs.settings}" method="post">
+    <table>
+        <tr><td valign="right">your name:</td>
+            <td><input type="text" name="name" value="${form.name}" /></td></tr>
+        <tr><td valign="right">your email:</td>
+            <td><input type="text" name="email" 
+                    value="${form.email}" disabled="disabled" />
+                    </td></tr>
+        <tr><td></td>
+            <td><input type="submit" name="action" value="save">
+                </td></tr>
+    </table>
+</form>

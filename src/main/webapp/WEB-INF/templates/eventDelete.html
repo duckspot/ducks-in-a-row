@@ -1,0 +1,39 @@
+${if false} <!--
+/diar/WEB-INF/templates/eventDelete.html
+
+History:
+ 4/ 4/13 PD add link property to event
+-->${end}
+<header>                
+    Delete Event?
+</header>
+<form action="${settings.URLs.event}" method="POST">
+    <input type="hidden" name="id" value="${form.id}" />                
+    <span class="error">${error.top}</span>
+    <table>
+        <tr><td align="right">id:</td>
+            <td>${form.id}</td></tr>
+        <tr><td align="right">date:</td>
+            <td>${form.date}</td></tr>
+        <tr><td align="right">description:</td>
+            <td>${form.description}</td></tr>
+        <tr><td align="right">length:</td>
+            <td>${form.length}</td></tr>
+        <tr><td align="right">start:</td>
+            <td>${form.startTime}</td>
+        <tr><td align="right">sequence:</td>
+            <td>${form.sequence}</td>
+        <tr><td align="right">completed:</td>
+            <td>${event.completed}</td>
+        <tr><td align="right">active:</td>
+            <td>${event.active}</td>
+        <tr><td align="right">start fixed:</td>
+            <td>${event.startFixed}</td></tr>
+        <tr><td align="right">link:</td>
+            <td>${form.link}</td></tr>
+        <tr><td></td>
+            <td><input type="submit" name="action" value="delete">
+                <input type="submit" name="action" value="cancel">
+            </td></tr>
+    </table>
+</form>

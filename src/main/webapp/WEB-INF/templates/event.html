@@ -1,0 +1,35 @@
+${if false} <!--
+/diar/WEB-INF/templates/event.html
+
+History:
+ 4/ 4/13 PD add link property to event
+-->${end}
+<header>                
+    Event
+</header>
+<a href="${settings.URLs.event}/${event.id}/edit">edit</a>
+<form action="${settings.URLs.event}/${event.id}" method="POST">
+    <input type="hidden" name="eventId" value="${event.id}" />                
+    <table>
+        <tr><td align="right">id:</td>
+            <td>${form.id}</td></tr>
+        <tr><td align="right">date:</td>
+            <td>${form.date}</td></tr>
+        <tr><td align="right">description:</td>
+            <td>${form.description}</td></tr>
+        <tr><td align="right">length:</td>
+            <td>${form.length}</td></tr>
+        <tr><td align="right">start:</td>
+            <td>${form.startTime}</td>
+        <tr><td align="right">sequence:</td>
+            <td>${form.sequence}</td>
+        <tr><td align="right">completed:</td>
+            <td>${event.completed}</td>
+        <tr><td align="right">active:</td>
+            <td>${event.active}</td>
+        <tr><td align="right">start fixed:</td>
+            <td>${event.startFixed}</td></tr>
+        <tr><td align="right">link:</td>
+            <td>${form.link}</td></tr>
+    </table>
+</form>

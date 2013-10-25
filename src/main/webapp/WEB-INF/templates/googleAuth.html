@@ -1,0 +1,31 @@
+<header>
+    Google authorization
+</header>
+Select the Google data you wish to share with ducks-in-a-row:
+<form action="${myURL}" method="post">
+    <input type="hidden" name="fields" 
+           value="nextURL,userinfoProfile,calendarChoice,action" />
+    <input type="hidden" name="nextURL" value="${form.nextURL}" />    
+    <table>
+        <tr><td align="right"><input type="checkbox" name="userinfoProfile" value="true"
+                ${settings.googleAuthScope.userinfoProfile;boolean(checked)} 
+                /></td>
+            <td>basic profile information (name, email address)</td>
+        </tr>
+        <tr><td align="right"><select name="calendarChoice">
+                    <option value="read/write" 
+${if settings.googleAuthScope.calendarChoice=read/write}selected${end}
+>update</option>
+                    <option value="read-only"
+${if settings.googleAuthScope.calendarChoice=read-only}selected${end}
+>read</option>
+                    <option value="none"
+${if settings.googleAuthScope.calendarChoice=none}selected${end}
+>no access</option>
+                </select></td>        
+            <td>Google Calendar</td></tr>        
+        <tr><td></td>
+            <td><input type="submit" name="action" value="authorize">
+                </td></tr>
+    </table>
+</form>

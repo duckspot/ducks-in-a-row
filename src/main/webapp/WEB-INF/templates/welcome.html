@@ -1,0 +1,37 @@
+<div id="content">
+    <h1 id="dayTitle" class="hidden"></h1>
+    <h1 id="title">Do you have your ducks in a row?</h1>
+
+    <p>Effective work requires effective recovery.
+        By scheduling both work and recovery in your day, 
+        you will be more productive and more relaxed.</p>
+
+        <p>Work and recovery are different contexts that you 
+                inhabit at different times.  
+                Schedule your contexts, 
+                and organize your tasks by context.
+                Ducks will show you possible tasks to do that reflect 
+                your current context, your next context.</p>
+
+    <p>Ducks also builds a history of your accomplishments.  
+        Balancing focus between accomplishments, and future 
+        tasks is important to keeping a positive attitude.</p>
+
+    <p>Ducks is in it's very early version now, 
+        and not all these features are working yet.
+        When more features working, there will be a Beta release.</p>
+
+    <p>The early -- raw version is available to experiment with.  
+        Please be aware that this is early work, 
+        and don't rely on it at this time, just experiment.</p>
+
+    <p>Since Ducks runs on Google App Engine, you must log into your Google 
+        Account before registering.</p>
+
+    ${if settings.userLoggedIn}
+    <a href="${settings.URLs.register}" class="button">register</a> - it's free
+    ${end}
+    ${if !settings.userLoggedIn}
+    <a href="${settings.URLs.login}" class="button">login to Google and register</a>
+    ${end}
+</div>

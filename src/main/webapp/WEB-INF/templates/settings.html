@@ -1,0 +1,26 @@
+<header>
+    settings
+</header>
+<form action="${settings.URLs.settings}" method="post">
+    <input type="hidden" name="fields" value="name,eMail,timeZoneID,action" />
+    <table>
+        <tr><td valign="right">your name:</td>
+            <td><input type="text" name="name" value="${form.name}" /></td></tr>
+        <tr><td valign="right">your email:</td>
+            <td><input type="text" name="email" 
+                    value="${form.email}" disabled="disabled" />
+                    </td></tr>
+        <tr><td valign="right">time zone</td>
+            <td><select name="timeZoneID">             
+                ${foreach timeZoneList timeZone}
+                    <option value="${timeZone.ID}" 
+                            ${if timeZone.selected}selected${end}
+                            >${timeZone.name}</option>
+                ${end}</select></td></tr>
+        <tr><td>Google Calendar:</td>
+            <td><a href="/googleAuth">${form.calendarChoice}</a></td>
+        <tr><td></td>
+            <td><input type="submit" name="action" value="save">
+                </td></tr>
+    </table>
+</form>

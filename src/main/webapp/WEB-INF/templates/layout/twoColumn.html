@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    ${if false} <!--
+    /diar/WEB-INF/templates/layout/twoColumn.html
+  
+    History:
+     4/ 4/13 PD valign="top" table layout
+     4/ 5/13 PD put calendars from day.calendar1 day.calendar2
+    10/22/13 PD restructure as DIVs and include JavaScript libraries
+    -->${end}
+    <head>
+        <meta name="Content-Language" content="en-US" />
+        <title>${pageTitle}</title>
+        <link rel="stylesheet" href="/style.css" />
+        <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+        <script src="/js/DateUtil.js"></script>
+        <script src="/js/layout.js"></script>        
+    </head>
+    <body>
+        <div id="centerContainer">
+            <div id="top">
+                <div id="clock">
+                    It's now <span class="dayOfWeek"></span><br/>
+                    <span class="date"></span><br/>
+                    <span class="time"></span>
+                </div>
+                <div id="logo"><img src="/images/ducks_in_a_row.png" width="304" 
+                     height="109" alt="ducks in a row" align="left"
+                     title="Beyond the to do list" /></div>
+                <div id="version">
+                    <span style="font-size: x-small">version </span>0.1
+                </div>
+                <div id="login"></div>
+            </div>        
+            <div class=".break"></div>
+            <div id="middle">
+                <div id="calendarColumn" class="roundBox">
+                    <table id="calendar"></table>
+                </div>
+                <div id="mainColumn" class="roundBox">
+                    ${content}
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
